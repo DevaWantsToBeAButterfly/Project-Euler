@@ -1,0 +1,1 @@
+print(abs(sum([n**2 for n in range(101)]) - sum(range(101))**2))

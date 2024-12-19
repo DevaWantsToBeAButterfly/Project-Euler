@@ -1,9 +1,14 @@
 from math import sqrt, floor
 
-def is_prime(number):
-    for n in range(2, floor(sqrt(number)) + 1):
-        if not number % n:
-            return False
+def is_prime(number, previous_primes=None):
+    if previous_primes:
+        for n in previous_primes:
+            if not number % n:
+                return False
+    else:
+        for n in range(2, floor(sqrt(number)) + 1):
+            if not number % n:
+                return False
 
     return True
 
